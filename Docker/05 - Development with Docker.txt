@@ -1,0 +1,16 @@
+Workflow with Docker:
+--------------------
+> Suppose we are creating a Flask application with Postgres as SQL.
+    - So, we will get Postgres image from the Docker Hub and use it in a contianer for our applicaiton.
+> Once we are done developing, we will commit it to a version control system like Git.
+> The Version Control system will trigger a Continuous intergartion like a Jenkins build.
+    - Jenkins build will create artifact from your application. [Docker Image is created]
+> The created artifact/docker image gets pushed to a private docker Repository.
+> The next step could be configured on Jenkins or some other scripts or tools through which that docker image gets deployed on a development server.
+    - So, the dev server pulls the image of the Flask application from the private docker hub and the Postgres image from the Docker hub.
+    - Now we have two containers (one application image from private docker repo and one postgres image from public docker hub) running simulatneously in our dev server. We will ofcourse need to configure them, for them to communicate to each other.
+    - Now a tester or another developer will be able to test the applciation.
+
+Docker in Software Development:
+------------------------------
+> The demo project is build using Node and MongoExpress (Docker Image).

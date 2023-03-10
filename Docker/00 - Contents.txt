@@ -12,3 +12,5 @@ Contents:
     d. Private Docker Repository (AWS)
     e. Deploying the containerized App
 7. Volumes - Persisting Data
+
+> The techworld-js project is a demo project that was shown in the course.
