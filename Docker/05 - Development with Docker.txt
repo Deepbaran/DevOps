@@ -14,3 +14,15 @@ Workflow with Docker:
 Docker in Software Development:
 ------------------------------
 > The demo project is build using Node and MongoExpress (Docker Image).
+
+Docker Network:
+--------------
+> Docker creates it's isolated Docker Network where the containers are running in.
+> So, when two containers are deployed in the same Docker Network, they can talk to each other, using just the container name without localhost, port number, etc. Just using the Container name because they are in the same Docker Network.
+> The applications that run outside of Docker Networs, for example a Node.js applicaiton that runs on a Node server, is going to connect to them from outside using the host, localhost and port number.
+> So, later when we package our application into it's own docker image, we are going to have Docker Network with Docker containers (mongoDB container, MongoExpress Contianer) and a Node.js application which we wrote (frontend and backend) in it's own Docker Container and it's going to connect to the MongoDB.
+> And the browser which is running on the host but outside the Docker Network, is going to connect to our JS applicaiton again using the host name and port number. 
+
+Connecting the App with MongoDB:
+-------------------------------
+> To connect with the database we need to give a protocol of the database and URI

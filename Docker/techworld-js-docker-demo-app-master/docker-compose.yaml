@@ -1,7 +1,7 @@
 version: '3'
 services:
   # my-app:
-  # image: ${docker-registry}/my-app:1.0
+  # image: ${docker-registry}/my-app:1.0 # Pull it from the docker repository / registry like ECR
   # ports:
   # - 3000:3000
   mongodb:
@@ -23,5 +23,5 @@ services:
       - ME_CONFIG_MONGODB_ADMINPASSWORD=password
       - ME_CONFIG_MONGODB_SERVER=mongodb
 volumes:
-  mongo-data:
-    driver: local
+  mongo-data: # Name of the volume reference. After defining the reference we can use it in the containers
+    driver: local # additional data for docker to create the physical file system in a local file system
